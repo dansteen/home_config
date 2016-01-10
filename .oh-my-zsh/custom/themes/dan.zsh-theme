@@ -6,6 +6,11 @@ git_basename(){
   fi
 }
 
+# we override this function
+vi_mode_prompt_info() {
+  echo "%{$fg[red]%}${${${KEYMAP-\$}/vicmd/_}/(main|viins)/\$}"
+}
+  
 
 # Color shortcuts
 RED=$fg[red]
@@ -26,14 +31,14 @@ RESET_COLOR=$reset_color
 
 
 # Format for parse_git_dirty()
-#ZSH_THEME_GIT_PROMPT_DIRTY="" # %{$RED%}(*)"
+ZSH_THEME_GIT_PROMPT_DIRTY="" # %{$RED%}(*)"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}="
 
 # Format for git_prompt_status()
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$RED%}@%{$GREEN%}"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$RED%}M%{$GREEN%}"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$RED%}➖%{$GREEN%}"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$YELLOW%}&$%{$GREEN%}"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$YELLOW_BOLD%}*%{$GREEN%}"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$YELLOW%}➗$%{$GREEN%}"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$YELLOW_BOLD%}~%{$GREEN%}"
 ZSH_THEME_GIT_PROMPT_ADDED="%{$GREEN_BOLD%}+%{$GREEN%}"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$WHITE%}."
 
@@ -51,9 +56,9 @@ ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
 #ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
 # Format for git_prompt_ahead()
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$RED%}▼▼"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$RED%}▼"
 # Format for git_prompt_behind()
-ZSH_THEME_GIT_PROMPT_BEHIND="%{$RED%}▲▲"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{$RED%}▲"
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
 ZSH_THEME_GIT_PROMPT_SHA_BEFORE=" %{$WHITE%}[%{$YELLOW%}"
@@ -66,5 +71,5 @@ ZSH_THEME_RVM_PROMPT_SUFFIX="]%{$reset_color%}"
 # Combine it all into a final right-side prompt
 #RPS1='$(git_current_branch)$(git_prompt_status)$(ruby_prompt_info) $EPS1'
 
-PROMPT='%{$fg[cyan]%}[%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+PROMPT='%{$fg[cyan]%}[%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$(vi_mode_prompt_info)%b '
 RPROMPT='%{$fg[magenta]%}$(git_basename) %{$fg[white]%}$(git_current_branch)$(parse_git_dirty) $(git_prompt_status)$(git_prompt_remote)%{$RESET_COLOR%}'

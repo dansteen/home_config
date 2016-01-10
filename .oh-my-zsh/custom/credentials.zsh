@@ -6,4 +6,5 @@ export AWS_SECRET_ACCESS_KEY=`grep aws_secret_access_key ~/.aws/config | awk '{p
 export AWS_DEFAULT_REGION="us-east-1"
 export TF_VAR_aws_access_key="$AWS_ACCESS_KEY_ID"
 export TF_VAR_aws_secret_key="$AWS_SECRET_ACCESS_KEY"
+export TF_VAR_consul_token=`grep consul_token ~/.terraform_config| awk '{print $3}'`
 

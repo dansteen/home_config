@@ -84,6 +84,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 export TF_VAR_aws_access_key="$AWS_ACCESS_KEY_ID"
 export TF_VAR_aws_secret_key="$AWS_SECRET_ACCESS_KEY"
 export TF_VAR_dud_prefix="" # if you want to change the launch config for terraform autoscale groups, change this to "dud_"
+export TF_VAR_consul_token=`grep consul_token ~/.terraform_config | awk '{print $3}'`
 
 #eval "$(rbenv init -)"
 source /usr/share/chruby/chruby.sh
