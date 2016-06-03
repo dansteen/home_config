@@ -20,7 +20,7 @@ then
 else
   # the knife command only exists in chefs ruby
   source /usr/share/chruby/chruby.sh
-  chruby ruby-2.1.2
+  chruby ruby-2.1.9
   QUERY=`knife search node "role:$ROLE ${ENVIRONMENT:+AND chef_environment:$ENVIRONMENT}" -a fqdn|grep fqdn|awk '{print $2}'|head -n ${COUNT:-10}`
 
   for HOST in ${QUERY[*]}

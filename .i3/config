@@ -127,7 +127,7 @@ bindsym $mod+Shift+9 move workspace 9: temp
 # client binding
 assign [class="URxvt"] 1: term
 assign [class="Firefox"] 2: web
-assign [class="uzbl-core"] 2: web
+#assign [class="uzbl-core"] 2: web
 #assign [class="Pidgin"] 8: im
 assign [class="Thunderbird"] 4: mail
 assign [class="Evolution"] 4: mail
