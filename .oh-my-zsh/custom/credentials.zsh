@@ -8,3 +8,5 @@ export TF_VAR_aws_access_key="$AWS_ACCESS_KEY_ID"
 export TF_VAR_aws_secret_key="$AWS_SECRET_ACCESS_KEY"
 export TF_VAR_consul_token=`grep consul_token ~/.terraform_config| awk '{print $3}'`
 export TF_VAR_airbrake_key_matching_spark=`grep airbrake_key_matching_spark ~/.terraform_config| awk '{print $3}'`
+export TF_VAR_datadog_api_key=`grep datadog_api_key ~/.terraform_config| awk '{print $3}'`
+export TF_VAR_datadog_app_key=`grep datadog_app_key ~/.terraform_config| awk '{print $3}'`

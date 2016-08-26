@@ -1,12 +1,20 @@
 syntax on
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! Wq :execute ':W' | :q
+
+" set up some key maps
+map [l :lnext<CR>
+map ]l :lprev<CR>
+
 call pathogen#infect()
 filetype plugin indent on
 " colo forestmonk
 colo molokai
 set hidden
 set autochdir
+
+"set spell spelllang=en_us
+"setlocal spell spelllang=en_us
 
 
 filetype plugin indent on
@@ -38,4 +46,8 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-go settings
 let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
 let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
+
+" needed in order to be able to jump to errors
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
 

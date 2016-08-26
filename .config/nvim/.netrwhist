@@ -1,3 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/dsteen/.oh-my-zsh'
+let g:netrw_dirhist_2='/home/dsteen/projects/controlled-compose/src/github.com/dansteen/controlled-compose/vendor/github.com/docker/libcompose'
+let g:netrw_dirhist_3='/home/dsteen/projects/controlled-compose/src/github.com/dansteen/controlled-compose/vendor/github.com/docker/libcompose/config'
+let g:netrw_dirhist_4='/home/dsteen/projects/controlled-compose/src/github.com/dansteen/controlled-compose/vendor/github.com/spf13/cobra'
+let g:netrw_dirhist_5='/home/dsteen/projects/controlled-compose/src/github.com/dansteen/controlled-compose/control'
+let g:netrw_dirhist_6='/home/dsteen/projects/traitify/traitify-api/config/docker-compose_files'
+let g:netrw_dirhist_7='/home/dsteen/projects/controlled-compose/src/github.com/dansteen/controlled-compose/vendor/github.com/docker/libcompose/docker/network'
