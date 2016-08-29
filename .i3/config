@@ -10,6 +10,13 @@
 # Please see http://i3wm.org/"6: docs"/userguide.html for a complete reference!
 
 set $mod Mod4
+set $mod1 Mod1
+set $1 "1: term"
+set $2 "2: term"
+set $3 "3: term"
+set $4 "4: term"
+set $5 "5: term"
+set $6 "6: term"
 
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -103,24 +110,23 @@ bindsym $mod+Tab [con_mark="scratchpad"] scratchpad show
 
 
 # switch to workspace
-bindsym $mod+1 workspace 1: term
-bindsym $mod+2 workspace 2: web
-bindsym $mod+3 workspace 3: dev
-bindsym $mod+4 workspace 4: mail
-bindsym $mod+5 workspace 5: cal
-bindsym $mod+6 workspace 6: docs
-bindsym $mod+7 workspace 7: citrix
+bindsym $mod1+1 workspace number 1
+bindsym $mod1+2 workspace number 2
+bindsym $mod1+3 workspace number 3
+bindsym $mod1+4 workspace number 4
+bindsym $mod1+5 workspace number 5
+bindsym $mod1+6 workspace number 6
+bindsym $mod1+7 workspace number 7
 #bindsym $mod+8 workspace 8: im
 bindsym $mod+9 workspace 9: temp
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move workspace 1: term
-bindsym $mod+Shift+2 move workspace 2: web
-bindsym $mod+Shift+3 move workspace 3: dev
-bindsym $mod+Shift+4 move workspace 4: mail
-bindsym $mod+Shift+5 move workspace 5: cal
-bindsym $mod+Shift+6 move workspace 6: docs
-bindsym $mod+Shift+7 move workspace 7: citrix
+bindsym $mod1+Shift+1 move workspace number 1
+bindsym $mod1+Shift+2 move workspace number 2
+bindsym $mod1+Shift+3 move workspace number 3
+bindsym $mod1+Shift+4 move workspace number 4
+bindsym $mod1+Shift+5 move workspace number 5
+bindsym $mod1+Shift+6 move workspace number 6
 #bindsym $mod+Shift+8 move workspace 8: im
 bindsym $mod+Shift+9 move workspace 9: temp
 
@@ -219,6 +225,10 @@ bindsym $mod+y exec /usr/bin/vendor_perl/dmenuclip
 
 # add a task
 bindsym $mod+bracketright exec i3-input -F "exec ~/scripts/add_task.sh '%s'"  -P 'Add Task: '
+
+# rename a workspace
+bindsym $mod1+r exec i3-input -F "exec ~/scripts/i3_rename_workspace.sh '%s'"  -P 'Workspace Name: '
+
 
 # add crf
 #bindsym $mod+backslash exec i3-input -F "exec ~/projects/scripts/generate_ticket.sh -k SD -t Task -x -u dsteen -p 'Bel7?mid' -s '%s'"  -P 'Add SD ticket: '
