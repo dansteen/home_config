@@ -21,8 +21,7 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
-set expandtab
-"set list
+set expandtab "set list
 
 " List chars
 "set listchars=""                  " Reset the listchars
@@ -35,6 +34,8 @@ set listchars+=precedes:<         " The character to show in the last column whe
 set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
+" set clipboards to sync
+"set clipboard=unnamed,unnamedplus
 
 " Path to python interpreter for neovim
 let g:python3_host_prog  = '/usr/bin/python'
@@ -51,3 +52,5 @@ let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
+" we dont want to conceal anything
+let g:vim_json_syntax_conceal = 0

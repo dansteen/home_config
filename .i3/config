@@ -120,6 +120,10 @@ bindsym $mod1+7 workspace number 7
 #bindsym $mod+8 workspace 8: im
 bindsym $mod+9 workspace 9: temp
 
+# next/prev workspace
+bindsym $mod1+k workspace next
+bindsym $mod1+j workspace prev
+
 # move focused container to workspace
 bindsym $mod1+Shift+1 move workspace number 1
 bindsym $mod1+Shift+2 move workspace number 2
