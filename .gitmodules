@@ -1,0 +1,15 @@
+[submodule ".config/nvim/bundle/vim-go"]
+	path = .config/nvim/bundle/vim-go
+	url = https://github.com/fatih/vim-go.git
+[submodule ".config/nvim/bundle/vim-json"]
+	path = .config/nvim/bundle/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule ".config/nvim/bundle/vim-terraform"]
+	path = .config/nvim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform
+[submodule ".config/nvim/bundle/tagbar"]
+	path = .config/nvim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule ".config/nvim/bundle/syntastic"]
+	path = .config/nvim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
