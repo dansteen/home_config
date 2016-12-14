@@ -1,3 +1,39 @@
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+" Required:
+set runtimepath+=/home/dfsteen/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+" Required:
+call dein#begin('/home/dfsteen/.config/nvim/dein')
+" Let dein manage dein
+" Required:
+call dein#add('Shougo/dein.vim')
+" Add or remove your plugins here:
+call dein#add('fatih/vim-go')
+call dein#add('elzr/vim-json')
+call dein#add('hashivim/vim-terraform')
+call dein#add('majutsushi/tagbar')
+call dein#add('vim-syntastic/syntastic')
+call dein#add('Shougo/deoplete.nvim')
+call dein#add('zchee/deoplete-go', {'build': 'make'})
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neosnippet-snippets')
+" You can specify revision/branch/tag.
+call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+" Required:
+call dein#end()
+" Required:
+filetype plugin indent on
+syntax enable
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"End dein Scripts-------------------------
+
+let mapleader = ","
 syntax on
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 command! Wq :execute ':W' | :q
@@ -5,9 +41,11 @@ command! Wq :execute ':W' | :q
 " set up some key maps
 map [l :lnext<CR>
 map ]l :lprev<CR>
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
 
-call pathogen#infect()
-filetype plugin indent on
+"call pathogen#infect()
+"filetype plugin indent on
 " colo forestmonk
 colo molokai
 set hidden
@@ -34,6 +72,7 @@ set listchars+=precedes:<         " The character to show in the last column whe
 set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
+set completeopt-=preview
 " set clipboards to sync
 "set clipboard=unnamed,unnamedplus
 
@@ -54,3 +93,14 @@ let g:syntastic_auto_loc_list = 1
 
 " we dont want to conceal anything
 let g:vim_json_syntax_conceal = 0
+
+" go stuff
+"let g:go_metalinter_autosave = 1
+"let g:go_metalinter_deadline = "5s"
+"let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype' ]
+set autowrite
+nnoremap <leader>a :cclose<CR>
+autocmd FileType go nmap <leader>m  <Plug>(go-imports)
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+let g:go_list_type = "quickfix"
