@@ -3,9 +3,9 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 " Required:
-set runtimepath+=/home/dfsteen/.config/nvim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/dsteen/.config/nvim/dein/repos/github.com/Shougo/dein.vim
 " Required:
-call dein#begin('/home/dfsteen/.config/nvim/dein')
+call dein#begin('/home/dsteen/.config/nvim/dein')
 " Let dein manage dein
 " Required:
 call dein#add('Shougo/dein.vim')
@@ -19,9 +19,12 @@ call dein#add('Shougo/deoplete.nvim')
 call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
-call dein#add('Shougo/neosnippet-snippets')
+call dein#add('hashivim/vim-hashicorp-tools')
+call dein#add('b4b4r07/vim-hcl')
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+
 " Required:
 call dein#end()
 " Required:

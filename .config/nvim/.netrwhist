@@ -1,9 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/dsteen/projects/route53/resources'
-let g:netrw_dirhist_2='/home/dsteen/projects/terraform-aws/billing.rkt'
-let g:netrw_dirhist_3='/home/dsteen/projects/traitify/core-api-java/config'
-let g:netrw_dirhist_4='/home/dsteen/projects/chef-repo/cookbooks/billing/recipes'
-let g:netrw_dirhist_5='/home/dsteen/projects/chef-repo/cookbooks/traitify/attributes'
-let g:netrw_dirhist_6='/home/dsteen/projects/rkt-images/debian/jessie'
-let g:netrw_dirhist_7='/home/dsteen/projects/chef-repo/cookbooks/maint-page/templates/default'
+let g:netrw_dirhist_cnt =0

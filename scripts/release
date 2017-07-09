@@ -1,13 +1,1 @@
-#!/bin/bash
-
-# this script will release the code in the current directory/branch to the regression branch
-
-# get our current branch
-BRANCH=`git rev-parse --abbrev-ref HEAD`
-git pull
-git push
-git checkout regression
-git merge -m "Merge branch '$BRANCH' into regression" $BRANCH
-git pull
-git push
-git checkout $BRANCH
+/home/dsteen/projects/ops_scripts/release

@@ -34,7 +34,8 @@ force_focus_wrapping yes
 workspace_auto_back_and_forth no
 
 # start a terminal
-bindsym $mod+Return exec st -e tmux 
+bindsym $mod+Return exec st -f "Misc Fixed:pixelsize=13:style=SemiCondensed" -e tmux -L outer -f ~/.tmux_outer.conf
+bindsym $mod+Shift+Return exec tmux -L inner -f ~/.tmux_outer.conf new-window
 
 # kill focused window
 bindsym $mod+Shift+C kill
@@ -67,9 +68,9 @@ bindsym $mod+v split v
 bindsym $mod+f fullscreen
 
 # change container layout (stacked, tabbed, default)
-bindsym $mod+t layout stacking
+#bindsym $mod+t layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout default
+#bindsym $mod+e layout default
 
 # toggle tiling / floating
 bindsym $mod+Shift+minus floating toggle
