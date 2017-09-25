@@ -10,7 +10,7 @@
 # Please see http://i3wm.org/"6: docs"/userguide.html for a complete reference!
 
 set $mod Mod4
-set $mod1 Mod1
+set $mod1 Mod4
 set $1 "1: term"
 set $2 "2: term"
 set $3 "3: term"
@@ -34,7 +34,7 @@ force_focus_wrapping yes
 workspace_auto_back_and_forth no
 
 # start a terminal
-bindsym $mod+Return exec st -f "Misc Fixed:pixelsize=13:style=SemiCondensed" -e tmux -L outer -f ~/.tmux_outer.conf
+bindsym $mod+Return exec st -f "Misc Fixed:pixelsize=13:style=SemiCondensed" -e /bin/zsh #tmux -L outer -f ~/.tmux_outer.conf
 bindsym $mod+Shift+Return exec tmux -L inner -f ~/.tmux_inner.conf new-window
 
 # kill focused window
@@ -111,27 +111,27 @@ bindsym $mod+Tab [con_mark="scratchpad"] scratchpad show
 
 
 # switch to workspace
-bindsym $mod1+1 workspace number 1
-bindsym $mod1+2 workspace number 2
-bindsym $mod1+3 workspace number 3
-bindsym $mod1+4 workspace number 4
-bindsym $mod1+5 workspace number 5
-bindsym $mod1+6 workspace number 6
-bindsym $mod1+7 workspace number 7
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
 #bindsym $mod+8 workspace 8: im
 bindsym $mod+9 workspace 9: temp
 
 # next/prev workspace
-bindsym $mod1+k workspace next
-bindsym $mod1+j workspace prev
+#bindsym $mod1+k workspace next
+#bindsym $mod1+j workspace prev
 
 # move focused container to workspace
-bindsym $mod1+Shift+1 move workspace number 1
-bindsym $mod1+Shift+2 move workspace number 2
-bindsym $mod1+Shift+3 move workspace number 3
-bindsym $mod1+Shift+4 move workspace number 4
-bindsym $mod1+Shift+5 move workspace number 5
-bindsym $mod1+Shift+6 move workspace number 6
+bindsym $mod+Shift+1 move workspace number 1
+bindsym $mod+Shift+2 move workspace number 2
+bindsym $mod+Shift+3 move workspace number 3
+bindsym $mod+Shift+4 move workspace number 4
+bindsym $mod+Shift+5 move workspace number 5
+bindsym $mod+Shift+6 move workspace number 6
 #bindsym $mod+Shift+8 move workspace 8: im
 bindsym $mod+Shift+9 move workspace 9: temp
 
@@ -232,7 +232,7 @@ bindsym $mod+y exec /usr/bin/vendor_perl/dmenuclip
 bindsym $mod+bracketright exec i3-input -F "exec ~/scripts/add_task.sh '%s'"  -P 'Add Task: '
 
 # rename a workspace
-bindsym $mod1+r exec i3-input -F "exec ~/scripts/i3_rename_workspace.sh '%s'"  -P 'Workspace Name: '
+#bindsym $mod1+r exec i3-input -F "exec ~/scripts/i3_rename_workspace.sh '%s'"  -P 'Workspace Name: '
 
 
 # add crf

@@ -20,7 +20,10 @@ call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('hashivim/vim-hashicorp-tools')
+call dein#add('fatih/vim-hclfmt')
+call dein#add('Blackrush/vim-gocode')
 call dein#add('b4b4r07/vim-hcl')
+
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
