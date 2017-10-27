@@ -23,6 +23,9 @@ call dein#add('hashivim/vim-hashicorp-tools')
 call dein#add('fatih/vim-hclfmt')
 call dein#add('Blackrush/vim-gocode')
 call dein#add('b4b4r07/vim-hcl')
+call dein#add('tpope/vim-obsession')
+call dein#add('airblade/vim-gitgutter')
+" call dein#add('chrisbra/changesPlugin')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -50,9 +53,6 @@ map ]l :lprev<CR>
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 
-"call pathogen#infect()
-"filetype plugin indent on
-" colo forestmonk
 colo molokai
 set hidden
 set autochdir
