@@ -10,13 +10,21 @@ greenclip daemon &
 #xrdb ~/.Xresources
 xrdb -merge ~/.Xresources
 /usr/bin/vmware-user-suid-wrapper
+
 #export XDG_CURRENT_DESKTOP=i3:GNOME
 #exec gnome-session --session=i3-gnome
 #exec /usr/bin/i3-gnome
 #export XDG_CURRENT_DESKTOP=i3:GNOME
 #exec budgie-desktop --session=budgie-i3-desktop
 #exec budgie-desktop 
-/usr/bin/cinnamon-session-i3
+#/usr/bin/cinnamon-session-i3
 
+# openbox
+#exec openbox-session
 
+#gala &
+#exec cerbere
+#exec startlxde
 
+# cinnamon
+exec cinnamon-session

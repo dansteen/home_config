@@ -52,6 +52,8 @@ bindsym $mod+r exec rofi -show run
 bindsym $mod+p exec rofi -modi lpass:/home/dsteen/scripts/rofi-lpass -show lpass
 bindsym $mod+g exec rofi -show window
 bindsym $mod+y exec rofi -modi clipboard:greenclip\ print -show clipboard
+for_window [instance="qalculate-gtk"] floating enable
+bindsym $mod+space exec raiseorlaunch -e 'qalculate-gtk' -i -s "qalculate-gtk" -r 
 
 
 # enable debug log
@@ -90,7 +92,7 @@ bindsym $mod+Shift+minus floating toggle
 bindsym $mod+minus focus mode_toggle
 
 # focus the parent container
-bindsym $mod+u focus parent
+#bindsym $mod+u focus parent
 
 # focus the child container
 bindsym $mod+d focus child
@@ -161,6 +163,17 @@ for_window [title="Add to Chat"] floating enable
 for_window [class="Adl"] move scratchpad 
 for_window [class="Hipchat"] move scratchpad 
 for_window [class="Adl" title="^$"] floating enable, border none
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Blueberry.py"] floating enable
+
+# firefox
+for_window [class="firefox-mirage"] mark mirage
+for_window [class="firefox-work"] mark work
+for_window [class="firefox-personal"] mark personal
+bindsym $mod+Shift+o exec raiseorlaunch  -e "firefox -P personal --new-instance --class=firefox-personal" -i -c "firefox-personal" 
+bindsym $mod+u exec raiseorlaunch  -e "firefox -P default --new-instance --class=firefox-work" -i -c "firefox-work" 
+bindsym $mod+Shift+v exec raiseorlaunch  -e "firefox -P mirage --new-instance --class=firefox-mirage" -i -c "firefox-mirage" 
+
 
 # nemo 
 bindsym $mod+b exec raiseorlaunch -e nemo -i -c nemo -r
@@ -178,7 +191,7 @@ bindsym $mod+w exec raiseorlaunch -e "chromium --app=https://web.whatsapp.com" -
 # asana
 bindsym $mod+t exec raiseorlaunch -e "chromium --app=https://app.asana.com" -i -s "app.asana.com" -w 3:apps
 # jenkins
-bindsym $mod+e exec raiseorlaunch -e "chromium --app=https://jenkins.traitify.com" -i -s "jenkins.traitify.com" jenkins
+bindsym $mod+Shift+p exec raiseorlaunch -e "chromium --app=https://jenkins.traitify.com" -i -s "jenkins.traitify.com" 
 # mail
 bindsym $mod+i exec --no-startup-id raiseorlaunch -e "chromium --app=https://inbox.google.com/u/1" -i -s "inbox.google.com__u_1" -w mail
 bindsym $mod+Shift+n exec --no-startup-id raiseorlaunch -e "chromium --app=https://inbox.google.com/u/0" -i -s "inbox.google.com__u_0" -w mail
@@ -239,7 +252,15 @@ bar {
 #  hidden_state hide
 #  modifier $mod
 #  tray_output primary
-
+  colors {
+    separator #666666
+    background #000000
+    statusline #ffffff
+    focused_workspace #551a8b #551a8b #ffffff
+    active_workspace #333333 #5f676a #ffffff
+    inactive_workspace #000000 #000000 #888888
+    urgent_workspace #2f343a #900000 #ffffff
+  }
 }
 # set up jumping to a specific window
 bindsym $mod+slash exec i3-input -F '[title="%s"] focus' -P 'find: ' 
@@ -254,7 +275,7 @@ bindsym $mod+F11 exec /usr/bin/i3lock --dpms
 bindsym $mod+o exec i3-input -p 'exec ~/scripts/open_servers.sh ' -P 'role: '
 
 # our machine setup
-bindsym $mod+Up exec i3-input -p 'exec ~/projects/scripts/machine_setup.sh -s '  -P 'push to: '
+#bindsym $mod+Up exec i3-input -p 'exec ~/projects/scripts/machine_setup.sh -s '  -P 'push to: '
 
 # rename a workspace
 #bindsym $mod1+r exec i3-input -F "exec ~/scripts/i3_rename_workspace.sh '%s'"  -P 'Workspace Name: '
@@ -266,4 +287,7 @@ bindsym $mod+Up exec i3-input -p 'exec ~/projects/scripts/machine_setup.sh -s ' 
 #  add sd task
 #bindsym $mod+Shift+backslash exec i3-input -F "exec ~/projects/scripts/generate_ticket.sh -k CRF -t CRF -x -u dsteen -p 'Bel7?mid' -r jpollara -d '%s' -s '%s'"  -P 'Create CRF: '
 
-
+client.focused #3b1261 #3b1261 #ffffff #662b9c
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused #222222 #222222 #888888 #292d2e
+client.urgent #2f343a #900000 #ffffff #900000

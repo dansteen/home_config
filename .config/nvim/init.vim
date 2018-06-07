@@ -12,6 +12,7 @@ call dein#add('Shougo/dein.vim')
 " Add or remove your plugins here:
 call dein#add('fatih/vim-go')
 call dein#add('elzr/vim-json')
+call dein#add('b4b4r07/vim-hcl')
 call dein#add('hashivim/vim-terraform')
 call dein#add('majutsushi/tagbar')
 call dein#add('vim-syntastic/syntastic')
@@ -21,15 +22,14 @@ call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('hashivim/vim-hashicorp-tools')
 call dein#add('fatih/vim-hclfmt')
-call dein#add('Blackrush/vim-gocode')
-call dein#add('b4b4r07/vim-hcl')
+"call dein#add('Blackrush/vim-gocode')
 call dein#add('tpope/vim-obsession')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('frioux/vim-regedit')
 " call dein#add('chrisbra/changesPlugin')
 
 " You can specify revision/branch/tag.
 call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
 
 " Required:
 call dein#end()
@@ -64,8 +64,9 @@ set autochdir
 filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
-set softtabstop=2
-set expandtab "set list
+set softtabstop=0
+set expandtab 
+set smarttab
 
 " List chars
 "set listchars=""                  " Reset the listchars
@@ -101,12 +102,37 @@ let g:syntastic_auto_loc_list = 1
 let g:vim_json_syntax_conceal = 0
 
 " go stuff
-"let g:go_metalinter_autosave = 1
-"let g:go_metalinter_deadline = "5s"
-"let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype' ]
-set autowrite
+let g:go_metalinter_autosave = 1
+let g:go_metalinter_deadline = "5s"
+let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype' ]
+"set autowrite
 nnoremap <leader>a :cclose<CR>
 autocmd FileType go nmap <leader>m  <Plug>(go-imports)
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
 let g:go_list_type = "quickfix"
+
+" more simple clipboard interaction
+vnoremap  <leader>y  "+y 
+nnoremap  <leader>y  "+y 
+nnoremap  <leader>Y  "+yg_ 
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+" better tmux integration
+let g:clipboard = {
+      \   'name': 'tmux-nox',
+      \   'copy': {
+      \      '+': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
+      \      '*': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
+      \    },
+      \   'paste': {
+      \      '+': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
+      \      '*': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
+      \   },
+      \   'cache_enabled': 1,
+      \ }
+
+

@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/dsteen/projects/terraform-aws/api-cluster'
-let g:netrw_dirhist_2='/home/dsteen/projects/terraform-aws/woofound.nomad'
-let g:netrw_dirhist_3='/home/dsteen/projects/traitify/woofound/infra/apache/ssl'
-let g:netrw_dirhist_4='/home/dsteen/projects/terraform-aws/shibboleth'
-let g:netrw_dirhist_5='/home/dsteen/projects/chef-repo/cookbooks/shibboleth-traitify/recipes'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/dsteen/projects/terraform-aws/profile-service'
+let g:netrw_dirhist_2='/home/dsteen/projects/terraform-aws/api-cluster'
+let g:netrw_dirhist_3='/home/dsteen/projects/traitify/scale_kinesis_lambda/infra/nomad-jobs'
+let g:netrw_dirhist_4='/home/dsteen/projects/traitify/profile_svc_kinesis_lambda'
+let g:netrw_dirhist_5='/home/dsteen/projects/terraform-aws/api-cluster'
+let g:netrw_dirhist_6='/home/dsteen/projects/terraform-aws/profile-service'
+let g:netrw_dirhist_7='/home/dsteen/projects/terraform-aws/scale-kinesis'
