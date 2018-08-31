@@ -1,0 +1,11 @@
+[user]
+	email = dan@steen.blue
+	name = Daniel Steen
+[push]
+	deafult = simple
+	default = simple
+[credential]
+	helper = cache --timeout=15552000
+[pager]
+  diff = diff-so-fancy | less --tabs=1,5 -RFX
+  show = diff-so-fancy | less --tabs=1,5 -RFX

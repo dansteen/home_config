@@ -1,7 +1,7 @@
 #xrandr --output LVDS1 --off
 #xrandr --output HDMI2 --mode 1920x1080 --right-of LVDS1
 #xrandr --output Virtual1 --mode 1920x1440 
-xrandr --dpi 220
+#xrandr --dpi 220
 #/etc/rc.d/synergys restart
 #/usr/bin/vendor_perl/clipbored
 autocutsel -fork &
@@ -27,4 +27,7 @@ xrdb -merge ~/.Xresources
 #exec startlxde
 
 # cinnamon
-exec cinnamon-session
+#exec cinnamon-session
+
+# plasma
+exec startkde

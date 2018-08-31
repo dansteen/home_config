@@ -41,6 +41,8 @@ traitify-cms:~/projects/traitify/traitify-cms
 traitify-widgets:~/projects/traitify/traitify-widgets
 shibboleth-traitify:~/projects/chef-repo/cookbooks/shibboleth-traitify
 gambit:~/projects/traitify/gambit
+package-service:~/projects/traitify/package_service
+instruction-service:~/projects/traitify/instruction_service
 http-forwarder:~/projects/traitify/http-forwarder
 deploy:~/projects/deploy
 ops_scripts:~/projects/ops_scripts
