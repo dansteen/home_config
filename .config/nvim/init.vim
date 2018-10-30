@@ -122,17 +122,17 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " better tmux integration
-let g:clipboard = {
-      \   'name': 'tmux-nox',
-      \   'copy': {
-      \      '+': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
-      \      '*': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
-      \    },
-      \   'paste': {
-      \      '+': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
-      \      '*': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
-      \   },
-      \   'cache_enabled': 1,
-      \ }
+"let g:clipboard = {
+"      \   'name': 'tmux-nox',
+"      \   'copy': {
+"      \      '+': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
+"      \      '*': 'tmux -L inner load-buffer - \; tmux -L inner save-buffer /mnt/downloads/shared.clipboard',
+"      \    },
+"      \   'paste': {
+"      \      '+': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
+"      \      '*': 'tmux -L inner load-buffer /mnt/downloads/shared.clipboard \; tmux -L inner save-buffer -',
+"      \   },
+"      \   'cache_enabled': 1,
+"      \ }
 
 

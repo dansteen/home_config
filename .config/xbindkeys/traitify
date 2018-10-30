@@ -1,0 +1,86 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.6
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# The format of a command line is:
+#    "command to start"
+#       associated key
+#
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+#
+# List of modifier:
+#   Release, Control, Shift, Mod1 (Alt), Mod2 (NumLock),
+#   Mod3 (CapsLock), Mod4, Mod5 (Scroll).
+#
+
+# The release modifier is not a standard X modifier, but you can
+# use it if you want to catch release events instead of press events
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# Examples of commands:
+
+"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130"
+  Mod4 + t + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -c traitify.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com"
+  Mod4 + s + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify-aws\)' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify-aws --class=traitify-aws https://woofound.signin.aws.amazon.com"
+  Mod4 + a + Release
+
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Traitify' --class=Traitify"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-browser' firefox -P Traitify --class=traitify-browser"
+  Mod4 + w + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -c gmail.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com"
+  Mod4 + m + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -c konsole konsole"
+  Mod4 + e + Release
+
+# set directly keycode (here control + f with my keyboard)
+#"xterm"
+#  c:41 + m:0x4
+
+# specify a mouse button
+#"xterm"
+#  control + b:2
+
+#"xterm -geom 50x20+20+20"
+#   Shift+Mod2+alt + s
+#
+## set directly keycode (here control+alt+mod2 + f with my keyboard)
+#"xterm"
+#  alt + c:0x29 + m:4 + mod2
+#
+## Control+Shift+a  release event starts rxvt
+#"rxvt"
+#  release+control+shift + a
+#
+## Control + mouse button 2 release event starts rxvt
+#"rxvt"
+#  Control + b:2 + Release
+
+##################################
+# End of xbindkeys configuration #
+##################################
