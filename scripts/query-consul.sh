@@ -1,1 +1,1 @@
-/home/dsteen/projects/ops_scripts/query-consul.sh
+/home/dsteen/projects/traitify/ops_scripts/query-consul.sh

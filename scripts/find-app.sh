@@ -1,1 +1,1 @@
-/home/dsteen/projects/ops_scripts/find-app.sh
+/home/dsteen/projects/traitify/ops_scripts/find-app.sh

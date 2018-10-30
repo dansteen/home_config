@@ -1,1 +1,1 @@
-/home/dsteen/projects/ops_scripts/generate-config.sh
+/home/dsteen/projects/traitify/ops_scripts/generate-config.sh

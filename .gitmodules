@@ -1,0 +1,6 @@
+[submodule "/home/dsteen/.tmux/plugins_inner/tpm"]
+	path = /home/dsteen/.tmux/plugins_inner/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "/home/dsteen/.tmux/plugins_outer/tpm"]
+	path = /home/dsteen/.tmux/plugins_outer/tpm
+	url = https://github.com/tmux-plugins/tpm

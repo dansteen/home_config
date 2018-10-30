@@ -11,7 +11,7 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export GIT_PS1_SHOWUPSTREAM="legacy"
 export GIT_PS1_SHOWCOLORHINTS=1
 
-source ~/projects/git-prompt.sh
+source ~/scripts/git-prompt.sh
 
 # set some color variables
 bold=`tput bold`
