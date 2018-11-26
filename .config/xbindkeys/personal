@@ -52,9 +52,29 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Personal\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Personal' --class=Personal"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c gmail.com chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
   Mod4 + m + Release
 
+"/home/dsteen/scripts/raise_or_launch.sh -c 'pulsesms.app' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://pulsesms.app"
+  Mod4 + t + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -c 'web.whatsapp.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://web.whatsapp.com"
+  Mod4 + s + Release
+
+### switch profiles
+"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+  Mod4 + Shift + m + Release
+
+"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+  Mod4 + Shift + t + Release
+
+"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+  Mod4 + Shift + p + Release
+
+### simulate right mouse clicks with window click
+"/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"
+  Mod4 + b:1 + Release
+  
 #"/home/dsteen/scripts/raise_or_launch.sh -c konsole konsole"
 #  Mod4 + e + Release
 

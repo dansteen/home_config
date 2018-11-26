@@ -52,12 +52,27 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c gmail.com chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://gmail.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.* - MirageId Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://gmail.com"
   Mod4 + m + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c konsole konsole"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
   Mod4 + e + Release
 
+
+### switch profiles
+"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+  Mod4 + Shift + m + Release
+
+"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+  Mod4 + Shift + t + Release
+
+"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+  Mod4 + Shift + p + Release
+
+### simulate right mouse clicks with window click
+"/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"
+  Mod4 + b:1 + Release
+  
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
 #  c:41 + m:0x4

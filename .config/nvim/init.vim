@@ -16,8 +16,8 @@ call dein#add('b4b4r07/vim-hcl')
 call dein#add('hashivim/vim-terraform')
 call dein#add('majutsushi/tagbar')
 call dein#add('vim-syntastic/syntastic')
-call dein#add('Shougo/deoplete.nvim')
-call dein#add('zchee/deoplete-go', {'build': 'make'})
+"call dein#add('Shougo/deoplete.nvim')
+"call dein#add('zchee/deoplete-go', {'build': 'make'})
 call dein#add('Shougo/neosnippet.vim')
 call dein#add('Shougo/neosnippet-snippets')
 call dein#add('hashivim/vim-hashicorp-tools')
@@ -26,6 +26,9 @@ call dein#add('fatih/vim-hclfmt')
 call dein#add('tpope/vim-obsession')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('frioux/vim-regedit')
+call dein#add('zxqfl/tabnine-vim')
+call dein#add('davidhalter/jedi-vim')
+call dein#add('ervandew/supertab')
 " call dein#add('chrisbra/changesPlugin')
 
 " You can specify revision/branch/tag.
@@ -80,6 +83,8 @@ set completeopt+=noinsert
 " deoplete.nvim recommend
 set completeopt+=noselect
 set completeopt-=preview
+" select completions with tab key
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " set clipboards to sync
 "set clipboard=unnamed,unnamedplus
 
