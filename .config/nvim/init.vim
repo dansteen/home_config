@@ -27,8 +27,8 @@ call dein#add('tpope/vim-obsession')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('frioux/vim-regedit')
 call dein#add('zxqfl/tabnine-vim')
-call dein#add('davidhalter/jedi-vim')
-call dein#add('ervandew/supertab')
+"call dein#add('davidhalter/jedi-vim')
+"call dein#add('ervandew/supertab')
 " call dein#add('chrisbra/changesPlugin')
 
 " You can specify revision/branch/tag.

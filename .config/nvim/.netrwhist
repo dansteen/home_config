@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/dsteen/.config/fontconfig'
 let g:netrw_dirhist_2='/etc/fonts/conf.d'
 let g:netrw_dirhist_3='/home/dsteen/projects/traitify/terraform-aws/api-cluster'
+let g:netrw_dirhist_4='/home/dsteen/projects/traitify/apps/static_assets/infra/nomad-jobs'
+let g:netrw_dirhist_5='/home/dsteen/projects/traitify/apps/traitify-api/infra/nomad-jobs'
