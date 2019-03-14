@@ -1,0 +1,8 @@
+# This config is for our personal workspace setup
+# switch to workspace
+bindsym $mod+p workspace personal; mode "personal"
+# move window to workspace
+bindsym $mod+Shift+p move container to workspace personal
+
+mode "personal" {
+}

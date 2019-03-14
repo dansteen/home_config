@@ -9,3 +9,16 @@
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX
   show = diff-so-fancy | less --tabs=1,5 -RFX
+[alias]
+  deploy = "!f() { \
+    if [[ `git status --porcelain` ]]; then \
+       echo \"You must first stash your changes\"; \
+    else \
+       git checkout master; \
+       git pull origin master; \
+       git branch -D regression; \
+       git checkout -b regression; \
+       git push origin regression -f; \
+       git checkout master; \
+    fi \
+  }; f"

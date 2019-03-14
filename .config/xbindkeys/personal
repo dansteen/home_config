@@ -48,9 +48,9 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'comics' firefox -P Comics --class=comics"
   Mod4 + c + Release
 
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-browser' firefox -P Traitify --class=traitify-browser"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Personal\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Personal' --class=Personal"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'personal' firefox -P Personal --class=personal-browser"
   Mod4 + w + Release
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Personal\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Personal' --class=Personal"
 
 "/home/dsteen/scripts/raise_or_launch.sh -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
   Mod4 + m + Release

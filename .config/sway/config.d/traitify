@@ -1,0 +1,8 @@
+# This config is for our personal workspace setup
+# switch to workspace
+bindsym $mod+t workspace traitify; mode "traitify"
+# move window to workspace
+bindsym $mod+Shift+t move container to workspace traitify
+
+mode "traitify" {
+}
