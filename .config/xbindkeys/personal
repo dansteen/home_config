@@ -71,6 +71,9 @@
 "xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
   Mod4 + Shift + p + Release
 
+"xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
+  Mod4 + Shift + d + Release
+
 ### simulate right mouse clicks with window click
 "/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"
   Mod4 + b:1 + Release

@@ -27,6 +27,7 @@ call dein#add('tpope/vim-obsession')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('frioux/vim-regedit')
 call dein#add('zxqfl/tabnine-vim')
+
 "call dein#add('davidhalter/jedi-vim')
 "call dein#add('ervandew/supertab')
 " call dein#add('chrisbra/changesPlugin')
@@ -45,6 +46,7 @@ if dein#check_install()
 endif
 "End dein Scripts-------------------------
 
+set encoding=utf-8
 let mapleader = ","
 syntax on
 command! W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -125,6 +127,29 @@ nnoremap <leader>p "+p
 nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
+
+" python stuff
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let python_highlight_all=1
+"au BufNewFile,BufRead *.py
+"    \ set tabstop=4
+"    \ set softtabstop=4
+"    \ set shiftwidth=4
+"    \ set textwidth=79
+"    \ set expandtab
+"    \ set autoindent
+"    \ set fileformat=unix
+"python with virtualenv support
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 " better tmux integration
 "let g:clipboard = {

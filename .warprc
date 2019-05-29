@@ -26,10 +26,13 @@ org-service:~/projects/traitify/apps/org_service
 profile-service:~/projects/traitify/apps/profile_service
 traitify-cms:~/projects/traitify/apps/traitify-cms
 traitify-widgets:~/projects/traitify/apps/traitify-widgets
-shibboleth-traitify:~/projects/chef_repo/cookbooks/shibboleth-traitify
+shibboleth-traitify:~/projects/traitify/chef_repo/cookbooks/shibboleth-traitify
 gambit:~/projects/traitify/apps/gambit
 package-service:~/projects/traitify/apps/package_service
 instruction-service:~/projects/traitify/apps/instruction_service
 http-forwarder:~/projects/traitify/apps/http-forwarder
 deploy:~/projects/deploy
 ops_scripts:~/projects/traitify/ops_scripts
+atlantis:~/projects/traitify/atlantis
+conan:~/projects/traitify/conan
+traefik:~/projects/traitify/traefik

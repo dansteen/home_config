@@ -52,10 +52,11 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* - MirageId Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://gmail.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
   Mod4 + m + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-mirage --class terminal-mirage"
   Mod4 + e + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -w -c 'code-oss' code-oss" 
@@ -70,6 +71,9 @@
 
 "xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
   Mod4 + Shift + p + Release
+
+"xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
+  Mod4 + Shift + d + Release
 
 ### simulate right mouse clicks with window click
 "/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"

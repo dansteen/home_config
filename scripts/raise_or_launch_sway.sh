@@ -6,10 +6,12 @@ function printUsage {
   echo "raise a window or run a command"
   echo ""
   echo "Usage: "
-  echo " $0 -c <class> [ -w ] | <class_name> <cmd>"
+  echo " $0 -c <class> [-w] [-n] | <class_name> <cmd>"
   echo ""
   echo "   -c   The class, classname, or title to search for"
   echo "   -w   Restrict our search to the current desktop"
+  echo "   -n   Do not set common env variables"
+  echo "   -s   Interact with this as a scratchpad"
   echo "   <cmd>  The command to run if no matching window is found"
   echo ""
 }
@@ -39,6 +41,12 @@ while [[ $# -gt 0 ]]; do
         CURRENT_WORKSPACE="$(swaymsg -t get_tree | jq -r '.. | select(.current_workspace?) | .current_workspace')"
         CURRENT_WORKSPACE_FILTER='.. | select(.type?=="workspace" and .name=="'${CURRENT_WORKSPACE}'") |'
         ;;
+      -n)
+        NO_ENV="TRUE"
+        ;;
+      -s)
+        SCRATCHPAD="TRUE"
+        ;;
       *)
         break
         ;;
@@ -46,14 +54,31 @@ while [[ $# -gt 0 ]]; do
     shift
 done
 
+if [ -z "$NO_ENV" ]; then
+  export GDK_BACKEND=wayland
+fi
+# these dont cause troubel so we set them anyway
+export CLUTTER_BACKEND=wayland
+export QT_QPA_PLATFORM=wayland-egl
+export QT_WAYLAND_FORCE_DPI=physical
+
 # find our window if it exists
 CON_ID="$(swaymsg -t get_tree | jq -r "$CURRENT_WORKSPACE_FILTER $SEARCHSTRING")"
 
 # if it fails, launch our command
 if [ -z "$CON_ID" ]; then
   ${@} &
+  # if it's a scratchpad
+  if [ -n "$SCRATCHPAD" ]; then
+    swaymsg \[con_id=$CON_ID\] move scratchpad
+    swaymsg \[con_id=$CON_ID\] scratchpad show
+  fi
 # otherwise activate the window
 else
-  swaymsg \[con_id=$CON_ID\] focus
+  if [ -n "$SCRATCHPAD" ]; then
+    swaymsg \[con_id=$CON_ID\] scratchpad show
+  else
+    swaymsg \[con_id=$CON_ID\] focus
+  fi
 fi
 

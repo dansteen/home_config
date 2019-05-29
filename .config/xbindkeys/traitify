@@ -39,7 +39,8 @@
 
 # Examples of commands:
 
-"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130"
+#"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130"
+"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 gtk-launch traitify-asana.desktop"
   Mod4 + t + Release
 
 "/home/dsteen/scripts/raise_or_launch.sh -c traitify.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com"
@@ -50,14 +51,16 @@
   Mod4 + a + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Traitify' --class=Traitify"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-browser' firefox -P Traitify --class=traitify-browser"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-browser' firefox -P Traitify --class=traitify-browser"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-browser' gtk-launch traitify-browser.desktop"
   Mod4 + w + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Traitify Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com"
 "/home/dsteen/scripts/raise_or_launch.sh -c '.* - Traitify Mail' gtk-launch traitify-mail.desktop"
   Mod4 + m + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' gnome-terminal --title terminal-traitify --profile traitify"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' gnome-terminal --title terminal-traitify --profile traitify"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-traitify --class terminal-traitify"
   Mod4 + e + Release
 
 "/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-jenkins' firefox -P Jenkins --class=traitify-jenkins"
@@ -78,6 +81,9 @@
 
 "xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
   Mod4 + Shift + p + Release
+
+"xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
+  Mod4 + Shift + d + Release
 
 ### simulate right mouse clicks with window click
 "/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"

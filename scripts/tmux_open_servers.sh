@@ -23,7 +23,7 @@ COUNT=${3:-10}
 NUM=0
 
 # open a window for each box
-while read IP BOXNAME STARTDIR TITLE; do
+while read IP BOXNAME STARTDIR TITLE PORTS; do
   # limit the number of windows we will open
   if [ $NUM -ge $COUNT ]; then break; fi
   NUM=$(($NUM+1))

@@ -11,6 +11,6 @@ STARTDIR="$3"
 
 # we always use the same session name
 SESSION_NAME=dan_session
-tmux -L inner new-window -d -n $NAME "mosh --ssh 'ssh -X' -- $DEST bash start_tmux.sh $SESSION_NAME $STARTDIR" 
+tmux -L inner new-window -d -n $NAME "mosh --ssh 'ssh -X' -- $DEST bash start_tmux.sh $SESSION_NAME" # $STARTDIR" 
 #tmux -L inner new-window -d -n $NAME "mosh --ssh 'ssh -X' -- $DEST tmux new-session -A -s $SESSION_NAME"
 

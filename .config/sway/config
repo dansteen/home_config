@@ -7,7 +7,7 @@
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
-set $mod Mod1
+set $mod Mod4
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -19,6 +19,7 @@ set $term roxterm
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec
 set $menu albert toggle
+exec_always albert
 
 ### Output configuration
 #
@@ -31,6 +32,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 output eDP-1 scale 2
+# fix for xwayland windows being scaled wrong
+#exec_always --no-startup-id xrandr --dpi 96
+#exec_always xrdb -load ~/.Xresources
 
 ### Idle configuration
 #
@@ -70,6 +74,14 @@ input "5426:563:Razer_Razer_Blade_Keyboard" {
   repeat_rate 100
 }
 
+# all windows start off floating
+for_window [workspace=".*"] floating enable
+for_window [tiling] border pixel 2
+titlebar_border_thickness 0
+titlebar_padding 0 0
+font pango:DejaVu Sans Mono 0
+# hide borders
+hide_edge_borders smart
 
 ### Key bindings
 #
@@ -82,7 +94,7 @@ input "5426:563:Razer_Razer_Blade_Keyboard" {
     bindsym $mod+Shift+q kill
 
     # start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+space exec $menu
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -144,9 +156,9 @@ input "5426:563:Razer_Razer_Blade_Keyboard" {
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+ctrl+s layout stacking
+    bindsym $mod+ctrl+w layout tabbed
+    bindsym $mod+ctrl+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -155,7 +167,7 @@ input "5426:563:Razer_Razer_Blade_Keyboard" {
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+ctrl+space focus mode_toggle
 
     # move focus to the parent container
     bindsym $mod+a focus parent
@@ -201,8 +213,9 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar {
-    position top
+    position bottom
     mode hide
+    modifier Mod1
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
@@ -216,7 +229,10 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 
+    font pango:DejaVu Sans Mono 12
+
     icon_theme Adwaita
+    workspace_buttons no
     
 }
 
