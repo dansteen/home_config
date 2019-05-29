@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=TraitifyBrowser
+GenericName=TraitifyBrowser
+Comment=TraitifyBrowser
+Exec=/usr/lib/firefox/firefox -P Traitify --class=traitify-browser
+Icon=firefox
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=traitify-browser
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+

@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=AWS
+GenericName=AWS
+Comment=AWS
+Exec=/usr/lib/firefox/firefox -P traitify-aws --class=traitify-aws
+Icon=/home/dsteen/.local/share/applications/AWS-256.png
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=traitify-aws
+Categories=Network;WebBrowser;
+Keywords=web;browser;internet;
+
