@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term roxterm
+set $term alacritty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 #set $menu dmenu_path | dmenu | xargs swaymsg exec
@@ -106,7 +106,7 @@ hide_edge_borders smart
     # reload the configuration file
     bindsym $mod+Shift+c reload
 
-    # exit sway (logs you out of your Wayland session)
+    # e"mirage"mirage""xit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
@@ -170,7 +170,7 @@ hide_edge_borders smart
     bindsym $mod+ctrl+space focus mode_toggle
 
     # move focus to the parent container
-    bindsym $mod+a focus parent
+    #bindsym $mod+a focus parent
 #
 # Scratchpad:
 #
@@ -232,11 +232,23 @@ bar {
     font pango:DejaVu Sans Mono 12
 
     icon_theme Adwaita
-    workspace_buttons no
+    workspace_buttons yes
     
 }
 
 
+# switch to workspace
+# mirage
+bindsym $mod+Shift+m workspace mirage; exec ln -sf ~/.config/sway/config.d/mirage ~/.config/sway/config.d/current; reload
+bindsym $mod+ctrl+Shift+m move container to workspace mirage
+# traitify
+bindsym $mod+Shift+t workspace traitify; exec ln -sf ~/.config/sway/config.d/traitify ~/.config/sway/config.d/current; reload
+bindsym $mod+ctrl+Shift+t move container to workspace traitify
+# personal
+bindsym $mod+Shift+p workspace personal; exec ln -sf ~/.config/sway/config.d/personal ~/.config/sway/config.d/current; reload
+bindsym $mod+ctrl+Shift+p move container to workspace personal
+
 include /etc/sway/config.d/*
 # include our custom files
-include ~/.config/sway/config.d/*
+include ~/.config/sway/config.d/function_keys
+include ~/.config/sway/config.d/current

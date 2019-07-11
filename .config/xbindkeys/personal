@@ -62,13 +62,16 @@
   Mod4 + s + Release
 
 ### switch profiles
-"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+#"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity 1fe55996-d41a-454a-8bd2-7411349f466d; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
   Mod4 + Shift + m + Release
 
-"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+#"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity ef993569-432c-4839-a47d-568abd87fc93; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
   Mod4 + Shift + t + Release
 
-"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+#"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity dc28b382-b6e8-415f-9d1f-c00697b893d7; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
   Mod4 + Shift + p + Release
 
 "xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"

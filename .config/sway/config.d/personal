@@ -1,13 +1,15 @@
 # This config is for our personal workspace setup
-# switch to workspace
-bindsym $mod+3 workspace personal; mode "personal"
-# move window to workspace
-bindsym $mod+Shift+3 move container to workspace personal
 
 for_window [app_id="comics"] workspace personal
 for_window [app_id="personal"] workspace personal
 for_window [instance="pulsesms.app"] workspace personal
 for_window [instance="web.whatsapp.com"] workspace personal
+
+  bindsym $mod+c exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'comics' firefox -P Comics --name=comics
+  bindsym $mod+w exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'personal-browser' firefox -P Personal --name=personal-browser
+  bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com
+  bindsym $mod+t exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c 'pulsesms.app' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://pulsesms.app
+  bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c 'web.whatsapp.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://web.whatsapp.com
 
 mode "personal" {
   bindsym $mod+c exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'comics' firefox -P Comics --name=comics
@@ -51,11 +53,9 @@ mode "personal" {
   bindsym $mod+minus scratchpad show
 
   # modes
-  bindsym $mod+1 workspace traitify; mode "traitify"
-  bindsym $mod+Shift+1 move container to workspace traitify
-  bindsym $mod+2 workspace mirage; mode "mirage"
-  bindsym $mod+Shift+2 move container to workspace mirage
-  bindsym $mod+3 workspace personal; mode "personal"
-  bindsym $mod+Shift+3 move container to workspace personal
+  bindsym $mod+Shift+t workspace traitify; mode "traitify"
+  bindsym $mod+ctrl+Shift+t move container to workspace traitify
+  bindsym $mod+Shift+m workspace mirage; mode "mirage"
+  bindsym $mod+ctrl+Shift+m move container to workspace mirage
 }
 

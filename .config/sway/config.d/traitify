@@ -1,16 +1,22 @@
 # This config is for our personal workspace setup
-# switch to workspace
-bindsym $mod+1 workspace traitify; mode "traitify"
-# move window to workspace
-bindsym $mod+Shift+1 move container to workspace traitify
+
+  bindsym $mod+t exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130
+  bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -s -c traitify.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com
+  bindsym $mod+a exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-aws' firefox -P traitify-aws --name=traitify-aws
+  bindsym $mod+w exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-browser' firefox -P Traitify --name=traitify-browser
+  bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.* - Traitify Mail' chromium --enable-use-zoom-for-dsf --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com
+  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-traitify' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-traitify --class terminal-traitify"
+  bindsym $mod+n exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-jenkins' firefox -P Jenkins --name=traitify-jenkins
+  bindsym $mod+i exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.*Workflowy.*' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://workflowy.com
+  bindsym $mod+d exec /home/dsteen/scripts/raise_or_launch_sway.sh -w -c 'code-oss' code-oss
 
 mode "traitify" {
   bindsym $mod+t exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130
-  bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -s -c traitify.slack.com chromium --force-device-scale-factor=2 --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com
+  bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -s -c traitify.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com
   bindsym $mod+a exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-aws' firefox -P traitify-aws --name=traitify-aws
   bindsym $mod+w exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-browser' firefox -P Traitify --name=traitify-browser
-  bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.* - Traitify Mail' chromium --force-device-scale-factor=2 --enable-use-zoom-for-dsf --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com
-  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-traitify' gnome-terminal --title terminal-traitify --profile traitify
+  bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.* - Traitify Mail' chromium --enable-use-zoom-for-dsf --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com
+  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-traitify' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-traitify --class terminal-traitify"
   bindsym $mod+n exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'traitify-jenkins' firefox -P Jenkins --name=traitify-jenkins
   bindsym $mod+i exec /home/dsteen/scripts/raise_or_launch_sway.sh -n -c '.*Workflowy.*' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://workflowy.com
   bindsym $mod+d exec /home/dsteen/scripts/raise_or_launch_sway.sh -w -c 'code-oss' code-oss
@@ -50,10 +56,8 @@ mode "traitify" {
   bindsym $mod+minus scratchpad show
 
  # modes
-  bindsym $mod+1 workspace traitify; mode "traitify"
-  bindsym $mod+Shift+1 move container to workspace traitify
-  bindsym $mod+2 workspace mirage; mode "mirage"
-  bindsym $mod+Shift+2 move container to workspace mirage
-  bindsym $mod+3 workspace personal; mode "personal"
-  bindsym $mod+Shift+3 move container to workspace personal
+  bindsym $mod+Shift+m workspace traitify; mode "mirage"
+  bindsym $mod+ctrl+Shift+m move container to workspace mirage
+  bindsym $mod+Shift+p workspace personal; mode "personal"
+  bindsym $mod+ctrl+Shift+p move container to workspace personal
 }

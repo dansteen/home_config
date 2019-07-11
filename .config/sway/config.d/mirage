@@ -1,15 +1,18 @@
 # This config is for our personal workspace setup
-# switch to workspace
-bindsym $mod+2 workspace mirage; mode "mirage"
-# move window to workspace
-bindsym $mod+Shift+2 move container to workspace mirage
 
+  bindsym $mod+t exec /home/dsteen/scripts/raise_or_launch_sway.sh -c app.asana.com__0_home_794179816889135 chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://app.asana.com/0/home/794179816889135
+  bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -c -c mirageid.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mirageid.slack.com
+  bindsym $mod+w exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser
+  bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -c '.* - MirageId Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://gmail.com
+  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-mirage' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-mirage --class terminal-mirage"
+
+  #bindsym $mod+d exec /home/dsteen/scripts/raise_or_launch_sway.sh -w -c 'code-oss' code-oss
 mode "mirage" {
   bindsym $mod+t exec /home/dsteen/scripts/raise_or_launch_sway.sh -c app.asana.com__0_home_794179816889135 chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://app.asana.com/0/home/794179816889135
   bindsym $mod+s exec /home/dsteen/scripts/raise_or_launch_sway.sh -c -c mirageid.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mirageid.slack.com
   bindsym $mod+w exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser
   bindsym $mod+m exec /home/dsteen/scripts/raise_or_launch_sway.sh -c '.* - MirageId Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://gmail.com
-  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage
+  bindsym $mod+e exec /home/dsteen/scripts/raise_or_launch_sway.sh -c 'terminal-mirage' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-mirage --class terminal-mirage"
   #bindsym $mod+d exec /home/dsteen/scripts/raise_or_launch_sway.sh -w -c 'code-oss' code-oss
 
   # defaults
@@ -47,10 +50,8 @@ mode "mirage" {
   bindsym $mod+minus scratchpad show
 
  # modes
-  bindsym $mod+1 workspace traitify; mode "traitify"
-  bindsym $mod+Shift+1 move container to workspace traitify
-  bindsym $mod+2 workspace mirage; mode "mirage"
-  bindsym $mod+Shift+2 move container to workspace mirage
-  bindsym $mod+3 workspace personal; mode "personal"
-  bindsym $mod+Shift+3 move container to workspace personal
+  bindsym $mod+Shift+t workspace mirage; mode "traitify"
+  bindsym $mod+ctrl+Shift+t move container to workspace traitify
+  bindsym $mod+Shift+p workspace mirage; mode "personal"
+  bindsym $mod+ctrl+Shift+p move container to workspace personal
 }
