@@ -32,7 +32,7 @@ RESET_COLOR=$reset_color
 
 # Format for parse_git_dirty()
 ZSH_THEME_GIT_PROMPT_DIRTY="" # %{$RED%}(*)"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}="
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%} ="
 
 # Format for git_prompt_status()
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$RED_BOLD%}M%{$GREEN%}"
@@ -72,4 +72,5 @@ ZSH_THEME_RVM_PROMPT_SUFFIX="]%{$reset_color%}"
 #RPS1='$(git_current_branch)$(git_prompt_status)$(ruby_prompt_info) $EPS1'
 
 PROMPT='%{$fg[cyan]%}[%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$(vi_mode_prompt_info)%b '
-RPROMPT='%{$fg[magenta]%}$(git_basename) %{$fg[white]%}$(git_current_branch)$(parse_git_dirty) $(git_prompt_status)$(git_prompt_remote)%{$RESET_COLOR%}'
+#RPROMPT='%{$fg[magenta]%}$(git_basename) %{$fg[white]%}$(git_current_branch)$(parse_git_dirty) $(git_prompt_status)$(git_prompt_remote)%{$RESET_COLOR%}'
+RPROMPT='%{$fg[magenta]%}$(git_basename) %{$fg[white]%}$(git_prompt_info)$(git_prompt_remote)%{$RESET_COLOR%}'
