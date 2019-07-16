@@ -1,0 +1,18 @@
+#!/bin/bash
+# get the secure.img password
+PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
+# old dm-crypt method
+#echo -n "$PASS" | sudo cryptsetup luksOpen --key-file - secure.img dsteen_secure
+#sudo mount /dev/mapper/dsteen_secure /home/dsteen/secure
+#sudo mount -o bind /home/dsteen/secure/.ssh /home/dsteen/.ssh
+
+# new encfs method
+# put the following in fstab:
+#<path to this script>#/home/dsteen/Dropbox/Dan\040Files/secure /home/dsteen/secure  fuse  noauto,user  0  0
+# or we can allow this to run manually
+[ -z "$*" ] && PARAMS="/home/dsteen/Dropbox/Dan\ Files/secure /home/dsteen/secure"
+echo -n "$PASS" | encfs -S "$@" $PARAMS
+
+# cryptomator method
+#bindfs -p 700 --create-as-user --no-allow-other -o nonempty ~/secure/.ssh ~/.ssh
+
