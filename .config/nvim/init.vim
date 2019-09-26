@@ -1,50 +1,23 @@
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-" Required:
-set runtimepath+=/home/dsteen/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-" Required:
-call dein#begin('/home/dsteen/.config/nvim/dein')
-" Let dein manage dein
-" Required:
-call dein#add('Shougo/dein.vim')
-" Add or remove your plugins here:
-call dein#add('fatih/vim-go')
-call dein#add('elzr/vim-json')
-call dein#add('b4b4r07/vim-hcl')
-call dein#add('hashivim/vim-terraform')
-call dein#add('majutsushi/tagbar')
-call dein#add('vim-syntastic/syntastic')
-"call dein#add('Shougo/deoplete.nvim')
-"call dein#add('zchee/deoplete-go', {'build': 'make'})
-call dein#add('Shougo/neosnippet.vim')
-call dein#add('Shougo/neosnippet-snippets')
-call dein#add('hashivim/vim-hashicorp-tools')
-call dein#add('fatih/vim-hclfmt')
-"call dein#add('Blackrush/vim-gocode')
-call dein#add('tpope/vim-obsession')
-call dein#add('airblade/vim-gitgutter')
-call dein#add('frioux/vim-regedit')
-call dein#add('zxqfl/tabnine-vim')
+" these go at the top so we don't load python prior to them
+" Path to various interpreters for neovim
+let g:python_host_prog  = '/home/dsteen/.asdf/shims/python2'
+let g:python3_host_prog  = '/usr/bin/python' "'/home/dsten/.asdf/shims/python'
+let g:ruby_default_path = '/home/dsteen/.asdf/shims/ruby'
+" Skip the check of neovim module
+let g:python_host_skip_check = 1
+let g:python3_host_skip_check = 1
+set re=1
 
-"call dein#add('davidhalter/jedi-vim')
-"call dein#add('ervandew/supertab')
-" call dein#add('chrisbra/changesPlugin')
+" Specify a directory for plugins
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'hashivim/vim-hashicorp-tools'
+Plug 'fatih/vim-hclfmt'
 
-" You can specify revision/branch/tag.
-call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-" Required:
-call dein#end()
-" Required:
-filetype plugin indent on
-syntax enable
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-"End dein Scripts-------------------------
+Plug 'majutsushi/tagbar' 
+Plug 'airblade/vim-gitgutter'
+Plug 'zxqfl/tabnine-vim'
+call plug#end()
 
 set encoding=utf-8
 let mapleader = ","
@@ -90,34 +63,8 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " set clipboards to sync
 "set clipboard=unnamed,unnamedplus
 
-" Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/bin/python'
-" Skip the check of neovim module
-let g:python3_host_skip_check = 1
-
-" Run deoplete.nvim automatically
-let g:deoplete#enable_at_startup = 1
-" deoplete-go settings
-let g:deoplete#sources#go#gocode_binary = $GOPATH.'/bin/gocode'
-let g:deoplete#sources#go#sort_class = ['package', 'func', 'type', 'var', 'const']
-
-" needed in order to be able to jump to errors
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-
 " we dont want to conceal anything
 let g:vim_json_syntax_conceal = 0
-
-" go stuff
-let g:go_metalinter_autosave = 1
-let g:go_metalinter_deadline = "5s"
-let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'gotype' ]
-"set autowrite
-nnoremap <leader>a :cclose<CR>
-autocmd FileType go nmap <leader>m  <Plug>(go-imports)
-autocmd FileType go nmap <leader>b  <Plug>(go-build)
-autocmd FileType go nmap <leader>r  <Plug>(go-run)
-let g:go_list_type = "quickfix"
 
 " more simple clipboard interaction
 vnoremap  <leader>y  "+y 

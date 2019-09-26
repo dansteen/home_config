@@ -61,7 +61,8 @@
   Mod4 + m + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' gnome-terminal --title terminal-traitify --profile traitify"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-traitify --class terminal-traitify"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-traitify --class terminal-traitify"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-traitify' kitty --title terminal-traitify --class terminal-traitify --name terminal-traitify"
   Mod4 + e + Release
 
 "/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-jenkins' firefox -P Jenkins --class=traitify-jenkins"

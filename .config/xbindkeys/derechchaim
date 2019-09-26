@@ -1,5 +1,4 @@
-# For the benefit of emacs users: -*- shell-script -*-
-###########################
+# For the benefit of emacs users: -*- shell-script -*- ##########################
 # xbindkeys configuration #
 ###########################
 #
@@ -39,41 +38,44 @@
 
 # Examples of commands:
 
-"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_794179816889135 chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://app.asana.com/0/home/794179816889135"
-  Mod4 + t + Release
+#"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130"
+#  Mod4 + t + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c mirageid.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mirageid.slack.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c derechchaim.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://derechchaim.slack.com"
   Mod4 + s + Release
 
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify-aws\)' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify-aws --class=traitify-aws https://woofound.signin.aws.amazon.com"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-aws' firefox -P traitify-aws --class=traitify-aws" 
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-aws' gtk-launch traitify-aws.desktop"
 #  Mod4 + a + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Traitify' --class=Traitify"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'derechchaim-browser' firefox -P DerechChaim --class=derechchaim-browser"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
-  Mod4 + m + Release
+#"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Traitify Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com"
+#"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Traitify Mail' gtk-launch traitify-mail.desktop"
+#  Mod4 + m + Release
 
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-mirage --class terminal-mirage"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' kitty --title terminal-mirage --class terminal-mirage --name terminal-mirage"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-derechchaim' gnome-terminal --title terminal-derechchaim --profile derechchaim"
   Mod4 + e + Release
+
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-jenkins' firefox -P Jenkins --class=traitify-jenkins"
+#  Mod4 + n + Release
+
+#"/home/dsteen/scripts/raise_or_launch.sh -c '.*Workflowy.*' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://workflowy.com"
+#  Mod4 + i + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -w -c 'code-oss' code-oss" 
 #  Mod4 + d + Release
 
 ### switch profiles
-#"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
-"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity 1fe55996-d41a-454a-8bd2-7411349f466d; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
   Mod4 + Shift + m + Release
 
-#"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
-"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity ef993569-432c-4839-a47d-568abd87fc93; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
   Mod4 + Shift + t + Release
 
-#"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
-"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity dc28b382-b6e8-415f-9d1f-c00697b893d7; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
   Mod4 + Shift + p + Release
 
 "xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
@@ -83,6 +85,7 @@
 "/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"
   Mod4 + b:1 + Release
   
+
 # set directly keycode (here control + f with my keyboard)
 #"xterm"
 #  c:41 + m:0x4
