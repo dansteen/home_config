@@ -1,5 +1,5 @@
 #!/bin/bash
-tmux -L outer -f ~/.tmux_outer.conf
+tmux -L traitify -f ~/.tmux_outer.conf
 sleep 1
-tmux -L outer split-window -h
+tmux -L traitify split-window -h
 

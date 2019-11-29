@@ -9,7 +9,7 @@ autocutsel -selection PRIMARY -fork &
 greenclip daemon &
 #xrdb ~/.Xresources
 xrdb -merge ~/.Xresources
-/usr/bin/vmware-user-suid-wrapper
+#/usr/bin/vmware-user-suid-wrapper
 
 #export XDG_CURRENT_DESKTOP=i3:GNOME
 #exec gnome-session --session=i3-gnome
@@ -30,4 +30,4 @@ xrdb -merge ~/.Xresources
 #exec cinnamon-session
 
 # plasma
-exec startkde
+#exec startkde
