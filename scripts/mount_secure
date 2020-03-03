@@ -11,6 +11,8 @@ PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
 #<path to this script>#/home/dsteen/Dropbox/Dan\040Files/secure /home/dsteen/secure  fuse  noauto,user  0  0
 # or we can allow this to run manually
 [ -z "$*" ] && PARAMS="/home/dsteen/Dropbox/Dan\ Files/secure /home/dsteen/secure"
+# wsl needs us to set the permissions on /dev/fuse
+[[ "`uname -r`" == *"microsoft"* ]] && sudo /bin/chmod g+rw /dev/fuse && sudo /bin/chgrp fuse /dev/fuse
 echo -n "$PASS" | encfs -S "$@" $PARAMS
 
 # cryptomator method

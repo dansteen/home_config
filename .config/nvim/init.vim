@@ -9,6 +9,9 @@ let g:python3_host_skip_check = 1
 set re=1
 
 " Specify a directory for plugins
+" Need to do install the plugin manager first: curl -fLo
+" ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'hashivim/vim-hashicorp-tools'
@@ -17,6 +20,8 @@ Plug 'fatih/vim-hclfmt'
 Plug 'majutsushi/tagbar' 
 Plug 'airblade/vim-gitgutter'
 Plug 'zxqfl/tabnine-vim'
+Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 set encoding=utf-8
@@ -112,4 +117,6 @@ let python_highlight_all=1
 "      \   'cache_enabled': 1,
 "      \ }
 
+" fix text 
+autocmd VimEnter * :Abolish {ases,asse,ase}s{ment,ments} {assess}{}
 

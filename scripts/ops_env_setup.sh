@@ -1,0 +1,1 @@
+/home/dsteen/projects/traitify/ops_scripts/ops_env_setup.sh
