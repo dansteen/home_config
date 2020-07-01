@@ -36,3 +36,4 @@ ops_scripts:~/projects/traitify/ops_scripts
 atlantis:~/projects/traitify/atlantis
 conan:~/projects/traitify/conan
 traefik:~/projects/traitify/traefik
+cognitive_test_service:~/projects/traitify/apps/cognitive_test_service

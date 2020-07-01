@@ -55,33 +55,36 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
   Mod4 + m + Release
 
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
-#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' -e WINIT_HIDPI_FACTOR=2 alacritty -t terminal-mirage --class terminal-mirage"
-"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' kitty --title terminal-mirage --class terminal-mirage --name terminal-mirage"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' kitty --title terminal-mirage --class terminal-mirage --name terminal-mirage"
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' alacritty -t terminal-mirage --class terminal-mirage"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' gnome-terminal --title terminal-mirage --profile mirage"
   Mod4 + e + Release
 
-#"/home/dsteen/scripts/raise_or_launch.sh -w -c 'code-oss' code-oss" 
-#  Mod4 + d + Release
+"/home/dsteen/scripts/raise_or_launch.sh -w -c 'code-oss' code-oss" 
+  Mod4 + d + Release
 
 ### switch profiles
-#"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity 1fe55996-d41a-454a-8bd2-7411349f466d; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
-"xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
-  Mod4 + Shift + m + Release
-
 #"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity ef993569-432c-4839-a47d-568abd87fc93; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
-"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
-  Mod4 + Shift + t + Release
+"xdotool set_desktop 0; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
+  Mod4 + 1 + Release
+
+#"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity 1fe55996-d41a-454a-8bd2-7411349f466d; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
+  Mod4 + 2 + Release
 
 #"qdbus org.kde.ActivityManager /ActivityManager/Activities SetCurrentActivity dc28b382-b6e8-415f-9d1f-c00697b893d7; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
-"xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
-  Mod4 + Shift + p + Release
-
-"xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
-  Mod4 + Shift + d + Release
+"xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
+  Mod4 + 3 + Release
 
 ### simulate right mouse clicks with window click
 "/bin/xte -i $(xinput list --id-only 'Virtual core XTEST pointer') 'mouseclick 3' &"
   Mod4 + b:1 + Release
+  
+# connect to our airpods
+"/home/dsteen/scripts/airpod_set_profile.sh a2dp"
+  Mod4 + F12 + Release
+"/home/dsteen/scripts/airpod_set_profile.sh headset"
+  Mod4 + Shift + F12 + Release
   
 # set directly keycode (here control + f with my keyboard)
 #"xterm"

@@ -2,13 +2,11 @@
 # This is the config for when our window manager first starts.  We want it to be diffent so that the correct windows are launched in the correct desktops
 # switch profiles
 "xdotool set_desktop 3; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/mirage"
-  Mod4 + Shift + m + Release
+  Mod4 + 2 + Release
 
 "xdotool set_desktop 2; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/traitify"
-  Mod4 + Shift + t + Release
+  Mod4 + 1 + Release
 
 "xdotool set_desktop 1; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/personal"
-  Mod4 + Shift + p + Release
+  Mod4 + 3 + Release
 
-"xdotool set_desktop 4; killall xbindkeys; xbindkeys -f ~/.config/xbindkeys/derechchaim"
-  Mod4 + Shift + d + Release

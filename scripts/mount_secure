@@ -1,6 +1,24 @@
 #!/bin/bash
-# get the secure.img password
-PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
+# get our variables
+SOURCE_DIR="$1"
+MOUNT_DIR="$2"
+# get the password depending on what mount we are doing
+case "$MOUNT_DIR" in
+  /home/dsteen/documents/documents)
+    PASS="$(HOME=/home/dsteen /usr/bin/lpass show 'cryptomator documents' -j |jq -r '.[].password')"
+    ;;
+  /home/dsteen/documents/traitify_documents)
+    PASS="$(HOME=/home/dsteen /usr/bin/lpass show 'cryptomator traitify documents' -j |jq -r '.[].password')"
+    ;;
+  *)
+    # default to our secrets dir
+    SOURCE_DIR="/home/dsteen/Dropbox/Dan Files/secure"
+    MOUNT_DIR="/home/dsteen/secure"
+    PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
+    ;;
+esac
+
+
 # old dm-crypt method
 #echo -n "$PASS" | sudo cryptsetup luksOpen --key-file - secure.img dsteen_secure
 #sudo mount /dev/mapper/dsteen_secure /home/dsteen/secure
@@ -10,10 +28,10 @@ PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
 # put the following in fstab:
 #<path to this script>#/home/dsteen/Dropbox/Dan\040Files/secure /home/dsteen/secure  fuse  noauto,user  0  0
 # or we can allow this to run manually
-[ -z "$*" ] && PARAMS="/home/dsteen/Dropbox/Dan\ Files/secure /home/dsteen/secure"
+#[ -z "$*" ] && PARAMS="/home/dsteen/Dropbox/Dan\ Files/secure /home/dsteen/secure"
 # wsl needs us to set the permissions on /dev/fuse
 [[ "`uname -r`" == *"microsoft"* ]] && sudo /bin/chmod g+rw /dev/fuse && sudo /bin/chgrp fuse /dev/fuse
-echo -n "$PASS" | encfs -S "$@" $PARAMS
+echo -n "$PASS" | encfs -S "$SOURCE_DIR" "$MOUNT_DIR"
 
 # cryptomator method
 #bindfs -p 700 --create-as-user --no-allow-other -o nonempty ~/secure/.ssh ~/.ssh

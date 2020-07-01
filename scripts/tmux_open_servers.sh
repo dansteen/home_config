@@ -16,6 +16,9 @@ then
   exit 1
 fi
 
+# make sure our tmux variables are passed in
+export TMUX TMUX_PANE
+
 SELECTOR=$1
 ENVIRONMENT=$2
 # max open 10 windows
