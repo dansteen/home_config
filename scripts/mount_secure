@@ -1,20 +1,27 @@
 #!/bin/bash
+
+# make sure we have lpass installed
+LPASS="$(which lpass)" || { echo "Please have the lpass binary in your path" && exit 1; }
+# depending on the OS HOME is going to be different
+[[ "`uname`" == "Linux" ]] && USER_HOME="/home/dsteen"
+[[ "`uname`" == "Darwin" ]] && USER_HOME="/Users/dsteen"
+
 # get our variables
 SOURCE_DIR="$1"
 MOUNT_DIR="$2"
 # get the password depending on what mount we are doing
 case "$MOUNT_DIR" in
   /home/dsteen/documents/documents)
-    PASS="$(HOME=/home/dsteen /usr/bin/lpass show 'cryptomator documents' -j |jq -r '.[].password')"
+    PASS="$(HOME="${USER_HOME}" ${LPASS} show 'cryptomator documents' -j |jq -r '.[].password')"
     ;;
   /home/dsteen/documents/traitify_documents)
-    PASS="$(HOME=/home/dsteen /usr/bin/lpass show 'cryptomator traitify documents' -j |jq -r '.[].password')"
+    PASS="$(HOME="${USER_HOME}" ${LPASS} show 'cryptomator traitify documents' -j |jq -r '.[].password')"
     ;;
   *)
     # default to our secrets dir
-    SOURCE_DIR="/home/dsteen/Dropbox/Dan Files/secure"
-    MOUNT_DIR="/home/dsteen/secure"
-    PASS="$(HOME=/home/dsteen /usr/bin/lpass show secure.img --notes)"
+    SOURCE_DIR="${USER_HOME}/Dropbox/Dan Files/secure"
+    MOUNT_DIR="${USER_HOME}/secure"
+    PASS="$(HOME="${USER_HOME}" ${LPASS} show secure.img --notes)"
     ;;
 esac
 
