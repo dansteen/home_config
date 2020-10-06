@@ -52,13 +52,14 @@
   Mod4 + w + Release
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Personal\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Personal' --class=Personal"
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
+#"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.* Fastmail.*' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://www.fastmail.com"
   Mod4 + m + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c 'pulsesms.app' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://pulsesms.app"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'pulsesms.app' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://pulsesms.app"
   Mod4 + t + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c 'web.whatsapp.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://web.whatsapp.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c 'web.whatsapp.com' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://web.whatsapp.com"
   Mod4 + s + Release
 
 ### switch profiles

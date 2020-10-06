@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # make sure we have lpass installed
+export PATH
 LPASS="$(which lpass)" || { echo "Please have the lpass binary in your path" && exit 1; }
 # depending on the OS HOME is going to be different
 [[ "`uname`" == "Linux" ]] && USER_HOME="/home/dsteen"

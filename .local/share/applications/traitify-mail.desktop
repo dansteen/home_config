@@ -3,7 +3,7 @@ Version=1.0
 Name=Gmail
 GenericName=Gmail
 Comment=Gmail
-Exec=chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com
+Exec=chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://gmail.com
 Icon=/home/dsteen/.local/share/applications/Gmail-colorfull-128.png
 Terminal=false
 Type=Application

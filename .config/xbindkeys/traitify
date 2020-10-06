@@ -43,7 +43,7 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_225445204252130 gtk-launch traitify-asana.desktop"
   Mod4 + t + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c traitify.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c traitify.slack.com chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://traitify.slack.com"
   Mod4 + s + Release
 #"/home/dsteen/scripts/raise_or_launch.sh -c traitify-slack gtk-launch traitify-slack.desktop"
 
@@ -68,7 +68,7 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'traitify-jenkins' firefox -P Jenkins --class=traitify-jenkins"
   Mod4 + n + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.*Workflowy.*' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://workflowy.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.*Workflowy.*' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://workflowy.com"
   Mod4 + i + Release
 
 "/home/dsteen/scripts/raise_or_launch.sh -w -c 'code-oss' code-oss" 

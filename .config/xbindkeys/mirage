@@ -39,10 +39,10 @@
 
 # Examples of commands:
 
-"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_794179816889135 chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://app.asana.com/0/home/794179816889135"
+"/home/dsteen/scripts/raise_or_launch.sh -c app.asana.com__0_home_794179816889135 chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://app.asana.com/0/home/794179816889135"
   Mod4 + t + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c mirageid.slack.com chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mirageid.slack.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c mirageid.slack.com chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mirageid.slack.com"
   Mod4 + s + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Traitify-aws\)' chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify-aws --class=traitify-aws https://woofound.signin.aws.amazon.com"
@@ -52,7 +52,7 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
+"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
   Mod4 + m + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' kitty --title terminal-mirage --class terminal-mirage --name terminal-mirage"

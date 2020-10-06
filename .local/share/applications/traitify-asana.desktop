@@ -3,7 +3,7 @@ Version=1.0
 Name=Asana
 GenericName=Asana
 Comment=Asana
-Exec=/usr/lib/chromium/chromium --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130
+Exec=/usr/lib/chromium/chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Traitify --app=https://app.asana.com/0/home/225445204252130
 Icon=/home/dsteen/.local/share/applications/Asana-Logo.png
 Terminal=false
 Type=Application

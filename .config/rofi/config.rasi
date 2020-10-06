@@ -149,3 +149,6 @@ sorting-method: "fzf";
 /*	me-accept-entry: "MouseDPrimary";*/
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 }
+
+@import "breeze-light.rasi"
+@import "large-icon.rasi"

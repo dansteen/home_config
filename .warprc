@@ -37,3 +37,5 @@ atlantis:~/projects/traitify/atlantis
 conan:~/projects/traitify/conan
 traefik:~/projects/traitify/traefik
 cognitive_test_service:~/projects/traitify/apps/cognitive_test_service
+job_service:~/projects/traitify/apps/job_service
+recommendation_service:~/projects/traitify/apps/recommendation_service
