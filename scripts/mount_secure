@@ -2,7 +2,9 @@
 
 # make sure we have lpass installed
 export PATH
-LPASS="$(which lpass)" || { echo "Please have the lpass binary in your path" && exit 1; }
+BITWARDEN="$(which bw)" || { echo "Please have the bitwarden-cli binary (bw) in your path" && exit 1; }
+${BITWARDEN} login
+
 # depending on the OS HOME is going to be different
 [[ "`uname`" == "Linux" ]] && USER_HOME="/home/dsteen"
 [[ "`uname`" == "Darwin" ]] && USER_HOME="/Users/dsteen"
@@ -13,16 +15,16 @@ MOUNT_DIR="$2"
 # get the password depending on what mount we are doing
 case "$MOUNT_DIR" in
   /home/dsteen/documents/documents)
-    PASS="$(HOME="${USER_HOME}" ${LPASS} show 'cryptomator documents' -j |jq -r '.[].password')"
+    PASS="$(HOME="${USER_HOME}" ${BITWARDEN} get item "cryptomator documents" | jq -r '.login.password')"
     ;;
   /home/dsteen/documents/traitify_documents)
-    PASS="$(HOME="${USER_HOME}" ${LPASS} show 'cryptomator traitify documents' -j |jq -r '.[].password')"
+    PASS="$(HOME="${USER_HOME}" ${BITWARDEN} get item "cryptomator traitify documents" | jq -r '.login.password')"
     ;;
   *)
     # default to our secrets dir
     SOURCE_DIR="${USER_HOME}/Dropbox/Dan Files/secure"
     MOUNT_DIR="${USER_HOME}/secure"
-    PASS="$(HOME="${USER_HOME}" ${LPASS} show secure.img --notes)"
+    PASS="$(HOME="${USER_HOME}" ${BITWARDEN} get item secure.img | jq -r '.notes')"
     ;;
 esac
 
