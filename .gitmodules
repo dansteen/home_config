@@ -1,9 +1,3 @@
-[submodule "/home/dsteen/.tmux/plugins_inner/tpm"]
-	path = /home/dsteen/.tmux/plugins_inner/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule "/home/dsteen/.tmux/plugins_outer/tpm"]
-	path = /home/dsteen/.tmux/plugins_outer/tpm
-	url = https://github.com/tmux-plugins/tpm
 [submodule ".local/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca"]
 	path = .local/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca
 	url = https://github.com/mlutfy/hidetopbar.git
