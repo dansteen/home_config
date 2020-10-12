@@ -4,3 +4,9 @@
 [submodule ".local/share/gnome-shell/extensions/no-title-bar@franglais125.gmail.com"]
 	path = .local/share/gnome-shell/extensions/no-title-bar@franglais125.gmail.com
 	url = https://github.com/franglais125/no-title-bar
+[submodule "/home/dsteen/.tmux/plugins_outer/tpm"]
+	path = /home/dsteen/.tmux/plugins_outer/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "/home/dsteen/.tmux/plugins_inner/tpm"]
+	path = /home/dsteen/.tmux/plugins_inner/tpm
+	url = https://github.com/tmux-plugins/tpm
