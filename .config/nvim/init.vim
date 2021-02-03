@@ -15,11 +15,10 @@ Plug 'svermeulen/vim-cutlass'
 if ! exists('g:vscode')
   Plug 'elzr/vim-json', { 'for': 'json' }
   Plug 'hashivim/vim-hashicorp-tools'
-  Plug 'fatih/vim-hclfmt'
 
   Plug 'majutsushi/tagbar' 
   Plug 'airblade/vim-gitgutter'
-  Plug 'zxqfl/tabnine-vim'
+  Plug 'codota/tabnine-vim'
   Plug 'martinda/Jenkinsfile-vim-syntax'
   Plug 'tpope/vim-abolish'
 end
@@ -93,6 +92,9 @@ else
   set expandtab 
   set smarttab
 
+  " show full filepath in bar
+  set statusline+=%F
+
   " List chars
   "set listchars=""                  " Reset the listchars
   set listchars+=extends:>          " The character to show in the last column when wrap is
@@ -114,13 +116,13 @@ else
   let g:vim_json_syntax_conceal = 0
 
   " more simple clipboard interaction
-  vnoremap  <leader>y  "+y 
-  nnoremap  <leader>y  "+y 
-  nnoremap  <leader>Y  "+yg_ 
-  nnoremap <leader>p "+p
-  nnoremap <leader>P "+P
-  vnoremap <leader>p "+p
-  vnoremap <leader>P "+P
+  "vnoremap  <leader>y  "+y 
+  "nnoremap  <leader>y  "+y 
+  "nnoremap  <leader>Y  "+yg_ 
+  "nnoremap <leader>p "+p
+  "nnoremap <leader>P "+P
+  "vnoremap <leader>p "+p
+  "vnoremap <leader>P "+P
 
   " python stuff
   "au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/

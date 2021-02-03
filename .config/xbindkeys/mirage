@@ -52,8 +52,11 @@
 "/home/dsteen/scripts/raise_or_launch.sh -c 'mirage-browser' firefox -P Mirage --class=mirage-browser"
   Mod4 + w + Release
 
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Zoho Mail .*dan@mirageid.com' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://mail.zoho.com"
+"/home/dsteen/scripts/raise_or_launch.sh -w -c '([0-9]+|Trash).* \| Fastmail$' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://www.fastmail.com"
   Mod4 + m + Release
+
+"/home/dsteen/scripts/raise_or_launch.sh -w -c 'Calendar \| Fastmail' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Mirage --app=https://www.fastmail.com/calendar/upcoming/"
+  Mod4 + c + Release
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' kitty --title terminal-mirage --class terminal-mirage --name terminal-mirage"
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'terminal-mirage' alacritty -t terminal-mirage --class terminal-mirage"

@@ -53,9 +53,10 @@
 #"/home/dsteen/scripts/raise_or_launch.sh -c 'chromium \(/home/dsteen/.config/chromium/Personal\)' chromium --user-data-dir='/home/dsteen/.config/chromium/Personal' --class=Personal"
 
 #"/home/dsteen/scripts/raise_or_launch.sh -c '.* - Steenfamilies.com Mail' chromium --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://gmail.com"
-"/home/dsteen/scripts/raise_or_launch.sh -c '.* Fastmail.*' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://www.fastmail.com"
+"/home/dsteen/scripts/raise_or_launch.sh -w -c '.* Fastmail.*' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://www.fastmail.com"
   Mod4 + m + Release
 
+#"/home/dsteen/scripts/raise_or_launch.sh -c 'joinjoaomgcd.appspot.com' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://joinjoaomgcd.appspot.com/sms.html"
 "/home/dsteen/scripts/raise_or_launch.sh -c 'pulsesms.app' chromium --disable-gpu --user-data-dir=/home/dsteen/.config/chromium/Personal --app=https://pulsesms.app"
   Mod4 + t + Release
 
